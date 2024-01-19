@@ -1,0 +1,30 @@
+{% load static %}
+<html lang="en" data-bs-theme="dark">
+<head>
+    <script src="{% static 'js/color-modes.js' %}"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Happy English - Английский для всех</title>
+
+    <link href="{% static 'css/bootstrap_main.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/sidebars.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<main class="d-flex flex-nowrap">
+
+    {% include 'self_study_app/includes/inc_sidebars_nav.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+
+</main>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/sidebars.js' %}"></script>
+</body>
+</html>

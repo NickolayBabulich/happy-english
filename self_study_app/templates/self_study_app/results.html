@@ -1,0 +1,31 @@
+{% extends 'self_study_app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container py-5">
+        <div class="row mb-5 mb-lg-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2 class="fw-bold text-success mt-5 mb-2">Результаты тестирования</h2>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-8">
+                <div class="card-columns" style="padding: 10px; margin: 20px;">
+                    <div class="card" align="centre ">
+                        <div class="card-body">
+                            <h5 class="card-title">Вы заработали: {{ score }} очков</h5>
+                            <p class="card-text">Вы ответили верно на: {{ percent }}% вопросов из 100%</p>
+                            <p class="card-text">Время затраченное на прохождение теста: {{ time }} секунд</p>
+                            <p class="card-text">Количество правильных ответов: {{ correct }}</p>
+                            <p class="card-text">Количество неправильных ответов: {{ wrong }}</p>
+                            <p class="card-text">Всего вопросов: {{ total }}</p>
+                            <h2>{{ result }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

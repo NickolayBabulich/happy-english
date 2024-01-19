@@ -1,0 +1,26 @@
+{% extends 'self_study_app/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container py-5">
+        <div class="row mb-4 mb-lg-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2 class="fw-bold text-success mb-2">Ваш профиль</h2>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-xl-4">
+                <div class="card">
+                    <div class="card-body d-flex flex-column">
+
+                            <p>Email: {{ object.email }}</p>
+                            <p>Имя: {{ object.first_name }}</p>
+                            <p>Фамилия: {{ object.last_name }}</p>
+                            <a href="{% url 'edit' %}" class="btn btn-success w-50 py-2 mt-3 btn-lg">Редактировать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

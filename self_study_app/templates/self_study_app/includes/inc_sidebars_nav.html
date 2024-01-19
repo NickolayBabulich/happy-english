@@ -1,0 +1,70 @@
+<div class="b-example-divider b-example-vr"></div>
+
+<div class="flex-shrink-0 p-3" style="width: 380px;">
+    <a href="{% url 'index' %}"
+       class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+        <svg class="bi pe-none me-2" width="30" height="24">
+            <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-5 fw-semibold">Happy English</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+
+
+        <li class="mb-1">
+            {% for object in navigation %}
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0"
+                        aria-expanded="true">
+                    {{ object.title }}
+                </button>
+                <div class="collapse show" id="home-collapse" style="">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        {% for module in object.modules.all %}
+                            <li><a href="{% url 'module' module.pk %}"
+                                   class="link-body-emphasis d-inline-flex text-decoration-none rounded">{{ module.title }}</a>
+                            </li>
+
+                        {% endfor %}
+                        <li><a href="{% url 'course_test' object.pk %}"
+                               class="link-body-emphasis d-inline-flex text-decoration-none rounded">Итоговый тест</a>
+                        </li>
+                    </ul>
+                </div>
+            {% endfor %}
+        </li>
+
+        <li class="border-top my-3"></li>
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                Ваш аккаунт:
+            </button>
+            <div class="collapse show" id="account-collapse" style="">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="{% url 'profile' %}"
+                           class="link-body-emphasis d-inline-flex text-decoration-none rounded">Профиль</a></li>
+                    <li><a href="{% url 'edit' %}"
+                           class="link-body-emphasis d-inline-flex text-decoration-none rounded">Настройки</a></li>
+                    <li>
+
+
+                        <a href="{% url 'logout' %}"
+                           class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Выход
+                        </a>
+
+                        <form id="logout-form" method="post" action="{% url 'logout' %}" style="display: none;">
+                            {% csrf_token %}
+                        </form>
+
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+
+    </ul>
+</div>
+
+<div class="b-example-divider b-example-vr"></div>
