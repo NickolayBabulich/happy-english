@@ -1,4 +1,4 @@
-# Happy English - Английский для всех! (MVP учебного проекта)
+# Happy English - Английский для всех!
 
 ### О проекте:
 
@@ -7,6 +7,12 @@ Happy English - Английский для всех! - сервис диста�
 
 Данный проект представляет собой универсальную платформу для создания курсов обучения любой другой области отличной от английского,
 английский язык дан как тестовый проект в качестве демонстрации.
+
+## Технологии:
+
+[![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![OOP](https://img.shields.io/badge/-OOP-FF5733?style=flat)](https://en.wikipedia.org/wiki/Object-oriented_programming) [![Django](https://img.shields.io/badge/-Django-092E20?style=flat&logo=django&logoColor=white)](https://www.djangoproject.com/)
+ [![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
 ### Что реализовано
 - Регистрация пользователя
